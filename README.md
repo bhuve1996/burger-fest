@@ -6,7 +6,8 @@
 aaloo/
 ├── app/                 # Expo mobile app (PWA + iOS + Android)
 ├── admin/
-│   ├── app/             # Next.js admin panel
+│   ├── webapp/          # Next.js web application
+│   │   └── app/         # Next.js App Router
 │   └── serverless/      # Fastify backend (serverless functions)
 ├── packages/
 │   ├── config/          # Shared configuration
@@ -15,6 +16,8 @@ aaloo/
 │   └── services/        # Shared service layer
 └── package.json         # Root (manages all workspaces)
 ```
+<｜tool▁calls▁begin｜><｜tool▁call▁begin｜>
+read_file
 
 ## Quick Start
 

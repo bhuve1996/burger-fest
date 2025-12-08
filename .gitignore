@@ -39,7 +39,14 @@ Thumbs.db
 .expo-shared/
 .eas/
 
+# Next.js
+.next/
+out/
+
 # Cache
 .cache/
 .turbo/
+
+# Prisma
+prisma/migrations/
 
