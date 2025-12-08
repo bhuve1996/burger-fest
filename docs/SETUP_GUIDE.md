@@ -133,21 +133,52 @@ pnpm add @tanstack/react-table recharts
 pnpm add -D @types/node
 ```
 
-### 4.2 Setup Environment Variables
+### 4.2 Setup Environment Variables ✅ DONE
+
+Next.js reads environment variables from `apps/admin/.env.local`. Add these to your root `.env` file (they'll be used by other apps too):
 
 ```bash
-# apps/admin/.env.local
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_key
-NEXT_PUBLIC_API_URL=http://localhost:3000
+# Add to root .env file
+NEXT_PUBLIC_SUPABASE_URL=${SUPABASE_URL}
+NEXT_PUBLIC_SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
+NEXT_PUBLIC_API_URL=${API_URL}
 ```
 
-### 4.3 Create Basic Admin Layout
+**Note:** Next.js requires `NEXT_PUBLIC_` prefix for client-side variables. Copy these values to `apps/admin/.env.local` for Next.js to read them, or they'll be read from root `.env` if configured.
+
+### 4.3 Create Basic Admin Layout ✅ DONE
 
 ```typescript
 // apps/admin/app/layout.tsx
-export default function AdminLayout({ children }) {
-  return <div>{children}</div>;
+import type { Metadata } from 'next';
+import './globals.css';
+
+export const metadata: Metadata = {
+  title: 'Burger Fest Admin',
+  description: 'Admin panel for Burger Fest',
+};
+
+export default function AdminLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body>
+        <div className="min-h-screen bg-gray-50">
+          <header className="bg-white shadow">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+              <h1 className="text-2xl font-bold text-gray-900">Burger Fest Admin</h1>
+            </div>
+          </header>
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            {children}
+          </main>
+        </div>
+      </body>
+    </html>
+  );
 }
 ```
 
