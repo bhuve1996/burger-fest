@@ -35,7 +35,6 @@ module.exports = {
     scheme: 'burger-fest',
     plugins: [
       'expo-router',
-      'expo-splash-screen',
       [
         'expo-build-properties',
         {
