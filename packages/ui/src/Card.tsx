@@ -1,6 +1,7 @@
 // Cross-platform Card component (works on mobile + web)
 import { View, type ViewProps } from 'react-native';
 import type { ReactNode } from 'react';
+import './nativewind.d';
 
 export interface CardProps extends ViewProps {
   children: ReactNode;
@@ -20,4 +21,3 @@ export function Card({ children, className = '', ...props }: CardProps) {
     </View>
   );
 }
-

@@ -47,30 +47,32 @@ import { Pressable, Text } from 'react-native';
 
 export function Button({ children, variant = 'primary' }) {
   return (
-    <Pressable className={`
+    <Pressable
+      className={`
       px-4 py-2 rounded-lg
       ${variant === 'primary' ? 'bg-blue-500' : 'bg-gray-200'}
-    `}>
-      <Text className="text-white font-semibold">
-        {children}
-      </Text>
+    `}
+    >
+      <Text className="text-white font-semibold">{children}</Text>
     </Pressable>
   );
 }
 ```
 
 **Usage in Mobile App:**
+
 ```tsx
 import { Button } from '@burger-fest/ui';
 
-<Button variant="primary">Click me</Button>
+<Button variant="primary">Click me</Button>;
 ```
 
 **Usage in Admin Panel (with react-native-web):**
+
 ```tsx
 import { Button } from '@burger-fest/ui';
 
-<Button variant="primary">Click me</Button>
+<Button variant="primary">Click me</Button>;
 ```
 
 ---
@@ -139,6 +141,7 @@ pnpm init
 ## Component Examples
 
 ### Button
+
 ```tsx
 <Button variant="primary" size="lg">
   Submit
@@ -146,6 +149,7 @@ pnpm init
 ```
 
 ### Card
+
 ```tsx
 <Card>
   <Text>Card content</Text>
@@ -153,11 +157,9 @@ pnpm init
 ```
 
 ### Input
+
 ```tsx
-<Input
-  placeholder="Enter email"
-  variant="outline"
-/>
+<Input placeholder="Enter email" variant="outline" />
 ```
 
 ---
@@ -185,14 +187,14 @@ export function PlatformButton({ children }) {
 
 ## Comparison: Custom Components vs Styled Components
 
-| Feature | Custom Components (RN + NativeWind) | Styled Components |
-|---------|-------------------------------------|-------------------|
-| **Cross-platform** | ✅ Native + Web | ✅ Native + Web |
-| **Tailwind support** | ✅ NativeWind | ❌ Conflicts |
-| **Bundle size** | ✅ Smaller | ❌ Larger (runtime) |
-| **Type safety** | ✅ Full TS | ✅ Full TS |
-| **Performance** | ✅ Better | ⚠️ Runtime overhead |
-| **Your setup** | ✅ Perfect fit | ❌ Conflicts |
+| Feature              | Custom Components (RN + NativeWind) | Styled Components   |
+| -------------------- | ----------------------------------- | ------------------- |
+| **Cross-platform**   | ✅ Native + Web                     | ✅ Native + Web     |
+| **Tailwind support** | ✅ NativeWind                       | ❌ Conflicts        |
+| **Bundle size**      | ✅ Smaller                          | ❌ Larger (runtime) |
+| **Type safety**      | ✅ Full TS                          | ✅ Full TS          |
+| **Performance**      | ✅ Better                           | ⚠️ Runtime overhead |
+| **Your setup**       | ✅ Perfect fit                      | ❌ Conflicts        |
 
 ---
 
@@ -201,6 +203,7 @@ export function PlatformButton({ children }) {
 **✅ Use Custom Components with React Native + NativeWind**
 
 **Why:**
+
 1. Already have NativeWind set up
 2. Works perfectly with your Expo setup
 3. Can share between mobile and admin panel
@@ -218,4 +221,3 @@ export function PlatformButton({ children }) {
 2. ✅ Added example components (Button, Card, Input)
 3. Install in mobile app: `pnpm add @burger-fest/ui --filter @burger-fest/mobile`
 4. Start building more components as needed!
-

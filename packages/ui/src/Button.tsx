@@ -1,6 +1,7 @@
 // Cross-platform Button component (works on mobile + web)
 import { Pressable, Text, type PressableProps } from 'react-native';
 import type { ReactNode } from 'react';
+import './nativewind.d';
 
 export interface ButtonProps extends Omit<PressableProps, 'className'> {
   children: ReactNode;
@@ -64,4 +65,3 @@ export function Button({
     </Pressable>
   );
 }
-

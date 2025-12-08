@@ -9,6 +9,11 @@
     "react-native": "^0.82.1",
     "react-native-web": "^0.21.2"
   },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "@types/react-native": "^0.73.0",
+    "typescript": "^5.9.3"
+  },
   "peerDependencies": {
     "nativewind": "^4.0.0"
   },
@@ -16,4 +21,3 @@
     "type-check": "tsc --noEmit"
   }
 }
-
