@@ -1,5 +1,5 @@
 packages:
   - 'packages/*'
   - 'app'
-  - 'admin'
+  - 'admin/webapp'
   - 'admin/serverless'
