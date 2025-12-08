@@ -6,9 +6,6 @@ config({ path: resolve(__dirname, '../../.env') });
 
 module.exports = {
   expo: {
-    _internal: {
-      projectRoot: __dirname,
-    },
     name: 'Burger Fest',
     slug: 'burger-fest',
     version: '1.0.0',
