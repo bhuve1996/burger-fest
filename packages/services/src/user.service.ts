@@ -4,7 +4,10 @@ import type { User } from '@burger-fest/types';
 
 export class UserService {
   // Get current user profile
-  static async getProfile(): Promise<{ user: User | null; error: string | null }> {
+  static async getProfile(): Promise<{
+    user: User | null;
+    error: string | null;
+  }> {
     const response = await usersApi.getProfile();
     return {
       user: response.data as User | null,
@@ -23,4 +26,3 @@ export class UserService {
     };
   }
 }
-

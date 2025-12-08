@@ -235,6 +235,7 @@ EXPO_PUBLIC_API_URL=${API_URL}
 ### 6.1 Create Shared Types Package ✅ DONE
 
 Created comprehensive TypeScript types:
+
 - `User`, `Post` - Database models
 - `AuthUser`, `LoginCredentials`, `SignUpData` - Auth types
 - `CreatePostData`, `UpdatePostData` - Post operations
@@ -244,6 +245,7 @@ Created comprehensive TypeScript types:
 ### 6.2 Create Shared API Client ✅ DONE
 
 Created `ApiClient` class with:
+
 - `get`, `post`, `put`, `delete` methods
 - `getPaginated` for paginated responses
 - Error handling and type safety
@@ -252,6 +254,7 @@ Created `ApiClient` class with:
 ### 6.3 Create Shared Services ✅ DONE
 
 Created service layer:
+
 - `AuthService` - Sign up, sign in (email/password, Google), sign out, get current user
 - `UserService` - Get profile, update profile
 - `PostService` - CRUD operations for posts (getAll, getById, create, update, delete)

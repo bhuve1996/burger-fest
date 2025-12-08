@@ -9,9 +9,7 @@ import type {
 
 export class PostService {
   // Get all posts with pagination
-  static async getAll(
-    params?: { page?: number; limit?: number }
-  ): Promise<{
+  static async getAll(params?: { page?: number; limit?: number }): Promise<{
     posts: PaginatedResponse<Post> | null;
     error: string | null;
   }> {
@@ -64,4 +62,3 @@ export class PostService {
     return { error: response.error };
   }
 }
-

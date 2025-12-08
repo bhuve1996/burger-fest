@@ -1,7 +1,11 @@
 // Auth Service - handles authentication logic
 import { createClient } from '@supabase/supabase-js';
 import { appConfig } from '@burger-fest/config';
-import type { AuthUser, LoginCredentials, SignUpData } from '@burger-fest/types';
+import type {
+  AuthUser,
+  LoginCredentials,
+  SignUpData,
+} from '@burger-fest/types';
 
 const supabase = createClient(appConfig.supabaseUrl, appConfig.supabaseKey);
 
@@ -60,11 +64,17 @@ export class AuthService {
   }
 
   // Google Social Login
-  static async signInWithGoogle() {
+  static async signInWithGoogle(redirectTo?: string) {
+    const redirectUrl =
+      redirectTo ||
+      (typeof window !== 'undefined'
+        ? `${window.location.origin}/auth/callback`
+        : 'burger-fest://auth/callback');
+
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
+        redirectTo: redirectUrl,
       },
     });
 
@@ -99,4 +109,3 @@ export class AuthService {
     return { session: data.session, error: error?.message || null };
   }
 }
-
