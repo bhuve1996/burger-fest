@@ -26,7 +26,41 @@ importers:
         specifier: ^5.0.0
         version: 5.9.3
 
-  apps/admin:
+  admin/serverless:
+    dependencies:
+      '@fastify/cors':
+        specifier: ^11.1.0
+        version: 11.1.0
+      '@fastify/rate-limit':
+        specifier: ^10.3.0
+        version: 10.3.0
+      '@prisma/client':
+        specifier: ^7.1.0
+        version: 7.1.0(prisma@7.1.0(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(typescript@5.9.3))(typescript@5.9.3)
+      '@supabase/supabase-js':
+        specifier: ^2.86.2
+        version: 2.86.2
+      fastify:
+        specifier: ^5.6.2
+        version: 5.6.2
+      prisma:
+        specifier: ^7.1.0
+        version: 7.1.0(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(typescript@5.9.3)
+    devDependencies:
+      '@types/node':
+        specifier: ^24.10.1
+        version: 24.10.1
+      dotenv:
+        specifier: ^17.2.3
+        version: 17.2.3
+      tsx:
+        specifier: ^4.21.0
+        version: 4.21.0
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  admin/webapp:
     dependencies:
       '@supabase/supabase-js':
         specifier: ^2.86.2
@@ -87,7 +121,7 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
-  apps/mobile:
+  app:
     dependencies:
       '@supabase/supabase-js':
         specifier: ^2.86.2
@@ -147,10 +181,10 @@ importers:
 
   packages/api:
     dependencies:
-      '@burger-fest/config':
+      '@aaloo/config':
         specifier: workspace:*
         version: link:../config
-      '@burger-fest/types':
+      '@aaloo/types':
         specifier: workspace:*
         version: link:../types
 
@@ -169,13 +203,13 @@ importers:
 
   packages/services:
     dependencies:
-      '@burger-fest/api':
+      '@aaloo/api':
         specifier: workspace:*
         version: link:../api
-      '@burger-fest/config':
+      '@aaloo/config':
         specifier: workspace:*
         version: link:../config
-      '@burger-fest/types':
+      '@aaloo/types':
         specifier: workspace:*
         version: link:../types
       '@supabase/supabase-js':
@@ -183,40 +217,6 @@ importers:
         version: 2.86.2
 
   packages/types: {}
-
-  server:
-    dependencies:
-      '@fastify/cors':
-        specifier: ^11.1.0
-        version: 11.1.0
-      '@fastify/rate-limit':
-        specifier: ^10.3.0
-        version: 10.3.0
-      '@prisma/client':
-        specifier: ^7.1.0
-        version: 7.1.0(prisma@7.1.0(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(typescript@5.9.3))(typescript@5.9.3)
-      '@supabase/supabase-js':
-        specifier: ^2.86.2
-        version: 2.86.2
-      fastify:
-        specifier: ^5.6.2
-        version: 5.6.2
-      prisma:
-        specifier: ^7.1.0
-        version: 7.1.0(@types/react@19.2.7)(react-dom@19.2.1(react@19.2.1))(react@19.2.1)(typescript@5.9.3)
-    devDependencies:
-      '@types/node':
-        specifier: ^24.10.1
-        version: 24.10.1
-      dotenv:
-        specifier: ^17.2.3
-        version: 17.2.3
-      tsx:
-        specifier: ^4.21.0
-        version: 4.21.0
-      typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
 
 packages:
   '@0no-co/graphql.web@1.2.0':
@@ -12425,7 +12425,7 @@ snapshots:
 
   dotenv-expand@11.0.7:
     dependencies:
-      dotenv: 16.4.7
+      dotenv: 16.6.1
 
   dotenv@16.4.7: {}
 
