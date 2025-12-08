@@ -33,17 +33,7 @@ module.exports = {
       favicon: './assets/favicon.png',
     },
     scheme: 'burger-fest',
-    plugins: [
-      'expo-router',
-      [
-        'expo-build-properties',
-        {
-          ios: {
-            useFrameworks: 'static',
-          },
-        },
-      ],
-    ],
+    plugins: ['expo-router'],
     extra: {
       // Expose EXPO_PUBLIC_* variables from root .env
       EXPO_PUBLIC_SUPABASE_URL:
