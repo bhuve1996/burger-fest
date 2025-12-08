@@ -197,29 +197,35 @@ pnpm add expo-router expo-auth-session
 pnpm add expo-notifications
 ```
 
-### 5.2 Setup Expo Router
+### 5.2 Setup Expo Router ✅ DONE
+
+Created app directory structure:
+- `app/_layout.tsx` - Root layout with Stack navigator
+- `app/(tabs)/_layout.tsx` - Tabs layout
+- `app/(tabs)/index.tsx` - Feed screen
+- `app/(auth)/login.tsx` - Login screen
+
+Updated `index.js` to use `expo-router/entry` and `package.json` main field.
+
+### 5.3 Setup NativeWind ✅ DONE
+
+- Created `tailwind.config.js` with NativeWind preset
+- Created `global.css` with Tailwind directives
+- Updated `app.config.js` with build properties for iOS
+- Imported `global.css` in root layout
+
+### 5.4 Setup Environment Variables ✅ DONE
+
+Expo is configured to read from root `.env` file via `app.config.js`:
 
 ```bash
-# Create app directory structure
-mkdir -p app/(auth) app/(tabs)
+# Add to root .env file
+EXPO_PUBLIC_SUPABASE_URL=${SUPABASE_URL}
+EXPO_PUBLIC_SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
+EXPO_PUBLIC_API_URL=${API_URL}
 ```
 
-### 5.3 Setup NativeWind
-
-```bash
-# Follow NativeWind setup guide
-# Update tailwind.config.js
-# Update app.json
-```
-
-### 5.4 Setup Environment Variables
-
-```bash
-# apps/mobile/.env
-EXPO_PUBLIC_SUPABASE_URL=your_supabase_url
-EXPO_PUBLIC_SUPABASE_ANON_KEY=your_supabase_key
-EXPO_PUBLIC_API_URL=http://localhost:3000
-```
+**Note:** Expo requires `EXPO_PUBLIC_` prefix for client-side variables. The `app.config.js` loads from root `.env` and will fallback to non-prefixed versions (e.g., `SUPABASE_URL` → `EXPO_PUBLIC_SUPABASE_URL`).
 
 ---
 
