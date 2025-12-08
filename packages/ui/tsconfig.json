@@ -3,8 +3,7 @@
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src",
-    "jsx": "react-native",
-    "types": ["react", "react-native", "nativewind/types"]
+    "jsx": "react-native"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
