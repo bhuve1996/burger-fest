@@ -17,15 +17,15 @@
     "expo-notifications": "^0.32.14",
     "expo-router": "^6.0.17",
     "nativewind": "^4.2.1",
-    "react": "^19.2.1",
+    "react": "^19.1.0",
     "react-hook-form": "^7.68.0",
-    "react-native": "^0.82.1",
+    "react-native": "^0.81.5",
     "react-native-web": "^0.21.2",
     "zod": "^4.1.13",
     "zustand": "^5.0.9"
   },
   "devDependencies": {
-    "@types/react": "^19.2.7",
+    "@types/react": "^19.1.17",
     "@types/react-native": "^0.73.0",
     "dotenv": "^17.2.3",
     "expo-build-properties": "^1.0.10",
