@@ -9,12 +9,17 @@
   "ignorePatterns": ["node_modules", "dist", "build", ".next"],
   "overrides": [
     {
-      "files": ["*.config.js", "*.config.mjs"],
+      "files": ["*.config.js", "*.config.mjs", "*.config.ts"],
       "env": {
-        "node": true
+        "node": true,
+        "commonjs": true
       },
       "rules": {
-        "@typescript-eslint/no-var-requires": "off"
+        "@typescript-eslint/no-var-requires": "off",
+        "@typescript-eslint/no-require-imports": "off"
+      },
+      "parserOptions": {
+        "sourceType": "script"
       }
     }
   ]
