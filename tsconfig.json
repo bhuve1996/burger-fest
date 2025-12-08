@@ -12,5 +12,13 @@
     "allowSyntheticDefaultImports": true
   },
   "include": [],
-  "exclude": ["node_modules", "dist", "build", ".next", "apps", "server", "packages"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    ".next",
+    "apps",
+    "server",
+    "packages"
+  ]
 }
