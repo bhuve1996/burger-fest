@@ -11,7 +11,7 @@ Minimal centralized configuration.
 ## Usage
 
 ```typescript
-import { routes, layouts, appConfig } from '@burger-fest/config';
+import { routes, layouts, appConfig } from '@aaloo/config';
 
 // Use routes
 routes.forEach(route => { ... });

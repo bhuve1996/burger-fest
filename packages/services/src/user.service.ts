@@ -1,6 +1,6 @@
 // User Service - handles user-related operations
-import { usersApi } from '@burger-fest/api';
-import type { User } from '@burger-fest/types';
+import { usersApi } from '@aaloo/api';
+import type { User } from '@aaloo/types';
 
 export class UserService {
   // Get current user profile

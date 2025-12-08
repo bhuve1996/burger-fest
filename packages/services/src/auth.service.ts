@@ -1,11 +1,11 @@
 // Auth Service - handles authentication logic
 import { createClient } from '@supabase/supabase-js';
-import { appConfig } from '@burger-fest/config';
+import { appConfig } from '@aaloo/config';
 import type {
   AuthUser,
   LoginCredentials,
   SignUpData,
-} from '@burger-fest/types';
+} from '@aaloo/types';
 
 const supabase = createClient(appConfig.supabaseUrl, appConfig.supabaseKey);
 

@@ -1,6 +1,6 @@
 // Shared API client for Burger Fest
-import type { ApiResponse, PaginatedResponse } from '@burger-fest/types';
-import { appConfig } from '@burger-fest/config';
+import type { ApiResponse, PaginatedResponse } from '@aaloo/types';
+import { appConfig } from '@aaloo/config';
 
 const API_URL = appConfig.apiUrl;
 

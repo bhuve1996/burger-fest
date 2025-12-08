@@ -1,11 +1,11 @@
 // Post Service - handles post-related operations
-import { postsApi } from '@burger-fest/api';
+import { postsApi } from '@aaloo/api';
 import type {
   Post,
   CreatePostData,
   UpdatePostData,
   PaginatedResponse,
-} from '@burger-fest/types';
+} from '@aaloo/types';
 
 export class PostService {
   // Get all posts with pagination

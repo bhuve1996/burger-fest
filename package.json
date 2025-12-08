@@ -1,28 +1,29 @@
 {
-  "name": "burger-fest",
+  "name": "aaloo",
   "version": "1.0.0",
   "private": true,
   "workspaces": [
     "packages/*",
-    "apps/*",
-    "server"
+    "aaloo/app",
+    "aaloo/admin",
+    "aaloo/admin/serverless"
   ],
   "scripts": {
     "prepare": "husky",
-    "dev:mobile": "npm run dev --workspace=@burger-fest/mobile",
-    "dev:admin": "npm run dev --workspace=@burger-fest/admin",
-    "dev:server": "npm run dev --workspace=@burger-fest/server",
-    "build:mobile": "npm run build --workspace=@burger-fest/mobile",
-    "build:admin": "npm run build --workspace=@burger-fest/admin",
-    "build:server": "npm run build --workspace=@burger-fest/server",
-    "build": "npm run build:server && npm run build:admin && npm run build:mobile",
+    "dev:app": "npm run dev --workspace=@aaloo/app",
+    "dev:admin": "npm run dev --workspace=@aaloo/admin",
+    "dev:serverless": "npm run dev --workspace=@aaloo/serverless",
+    "build:app": "npm run build --workspace=@aaloo/app",
+    "build:admin": "npm run build --workspace=@aaloo/admin",
+    "build:serverless": "npm run build --workspace=@aaloo/serverless",
+    "build": "npm run build:serverless && npm run build:admin && npm run build:app",
     "lint": "eslint . --ext .ts,.tsx --ignore-path .eslintignore",
     "format": "prettier --write .",
     "type-check": "npm run type-check --workspaces --if-present"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bhuve1996/burger-fest.git"
+    "url": "git+https://github.com/bhuve1996/aaloo.git"
   },
   "keywords": [],
   "author": "",

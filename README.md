@@ -1,13 +1,14 @@
-# Burger Fest - Monorepo
+# Aaloo - Monorepo
 
 ## Structure
 
 ```
-burger-fest/
-├── apps/
-│   ├── mobile/          # Expo app (PWA + iOS + Android)
-│   └── admin/           # Next.js admin panel
-├── server/              # Fastify backend
+aaloo/
+├── aaloo/
+│   ├── app/              # Expo mobile app (PWA + iOS + Android)
+│   └── admin/
+│       ├── app/          # Next.js admin panel
+│       └── serverless/   # Fastify backend (serverless functions)
 ├── packages/
 │   ├── config/          # Shared configuration
 │   ├── api/             # Shared API client
@@ -23,9 +24,9 @@ burger-fest/
 npm install
 
 # Run from root
-npm run dev:mobile      # Start mobile app
-npm run dev:admin       # Start admin panel
-npm run dev:server      # Start backend server
+npm run dev:app          # Start mobile app
+npm run dev:admin        # Start admin panel
+npm run dev:serverless   # Start backend serverless
 
 # Build everything
 npm run build
@@ -37,9 +38,9 @@ npm run lint
 
 ## Commands (from root)
 
-- `npm run dev:mobile` - Start Expo mobile app
+- `npm run dev:app` - Start Expo mobile app
 - `npm run dev:admin` - Start Next.js admin
-- `npm run dev:server` - Start Fastify backend
+- `npm run dev:serverless` - Start Fastify backend
 - `npm run build` - Build all apps
 - `npm run lint` - Lint all code
 - `npm run format` - Format all code
@@ -48,6 +49,6 @@ npm run lint
 ## Tech Stack
 
 - **Mobile:** Expo (React Native)
-- **Admin:** Next.js 14
-- **Backend:** Fastify + TypeScript
+- **Admin:** Next.js 16
+- **Backend:** Fastify + TypeScript (Serverless)
 - **Shared:** TypeScript, ESLint, Prettier

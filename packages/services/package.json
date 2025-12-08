@@ -1,13 +1,13 @@
 {
-  "name": "@burger-fest/services",
+  "name": "@aaloo/services",
   "version": "1.0.0",
   "private": true,
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "dependencies": {
-    "@burger-fest/api": "workspace:*",
-    "@burger-fest/config": "workspace:*",
-    "@burger-fest/types": "workspace:*",
+    "@aaloo/api": "workspace:*",
+    "@aaloo/config": "workspace:*",
+    "@aaloo/types": "workspace:*",
     "@supabase/supabase-js": "^2.86.2"
   },
   "scripts": {
