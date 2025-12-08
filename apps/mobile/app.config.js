@@ -10,28 +10,28 @@ module.exports = {
     slug: 'burger-fest',
     version: '1.0.0',
     orientation: 'portrait',
-    icon: './assets/icon.png',
+    // icon: './assets/icon.png', // TODO: Add icon.png (1024x1024)
     userInterfaceStyle: 'light',
-    splash: {
-      image: './assets/splash.png',
-      resizeMode: 'contain',
-      backgroundColor: '#ffffff',
-    },
+    // splash: {
+    //   image: './assets/splash.png',
+    //   resizeMode: 'contain',
+    //   backgroundColor: '#ffffff',
+    // },
     assetBundlePatterns: ['**/*'],
     ios: {
       supportsTablet: true,
       bundleIdentifier: 'com.burgerfest.app',
     },
     android: {
-      adaptiveIcon: {
-        foregroundImage: './assets/adaptive-icon.png',
-        backgroundColor: '#ffffff',
-      },
+      // adaptiveIcon: {
+      //   foregroundImage: './assets/adaptive-icon.png',
+      //   backgroundColor: '#ffffff',
+      // },
       package: 'com.burgerfest.app',
     },
-    web: {
-      favicon: './assets/favicon.png',
-    },
+    // web: {
+    //   favicon: './assets/favicon.png',
+    // },
     scheme: 'burger-fest',
     plugins: ['expo-router'],
     extra: {
