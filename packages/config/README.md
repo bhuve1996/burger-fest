@@ -26,4 +26,3 @@ const apiUrl = appConfig.apiUrl;
 ## Later: Move to env files
 
 Sensitive values (API URLs, keys) will move to `.env` files.
-

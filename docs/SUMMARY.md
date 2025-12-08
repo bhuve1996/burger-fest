@@ -16,6 +16,7 @@
 ## Repository Structure
 
 **Single Monorepo:**
+
 ```
 burger-fest/
 ├── apps/mobile/     # Expo app (PWA + iOS + Android)
@@ -115,4 +116,3 @@ burger-fest/
 ---
 
 **Everything in one place, minimal, ready to build!** 🚀
-

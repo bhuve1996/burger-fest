@@ -5,4 +5,3 @@ export const routes = [
   { path: '/login', component: 'Login', protected: false },
   { path: '/admin', component: 'AdminDashboard', protected: true },
 ];
-

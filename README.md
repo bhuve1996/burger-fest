@@ -51,4 +51,3 @@ npm run lint
 - **Admin:** Next.js 14
 - **Backend:** Fastify + TypeScript
 - **Shared:** TypeScript, ESLint, Prettier
-

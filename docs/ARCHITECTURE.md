@@ -29,6 +29,7 @@ burger-fest/
 ```
 
 **Benefits:**
+
 - ✅ Single codebase to manage
 - ✅ Shared code (types, services, API client)
 - ✅ Easier development and deployment
@@ -36,6 +37,7 @@ burger-fest/
 - ✅ One deployment pipeline
 
 **Monorepo Tools:**
+
 - **Turborepo** or **Nx** - For managing monorepo builds
 - **pnpm workspaces** or **npm workspaces** - For package management
 
@@ -44,29 +46,35 @@ burger-fest/
 ## Core Principles
 
 ### 1. Role-Based Access Control (RBAC)
+
 - Roles: `admin`, `moderator`, `user`
 - Permissions managed at API/service layer
 - Middleware for route protection
 
 ### 2. Configuration-Driven System
+
 - **Layouts:** Dynamic layout rendering based on user role
 - **Routes:** Route definitions in configuration, protected by RBAC
 - **Icons & Labels:** Centralized mapping, i18n ready
 
 ### 3. Service Layer Pattern
+
 **No direct database/API calls from components**
 
 **Data Flow:**
+
 ```
 Database → API Layer → Service Layer → Zustand → Components
 ```
 
 **Example: User Profile**
+
 ```
 Supabase DB → Fastify API → UserService.getProfile() → Zustand Store → Component
 ```
 
 ### 4. Supabase Integration
+
 - **Decision:** Direct Supabase integration (OK with vendor lock-in)
 - Supabase Auth (direct usage)
 - Supabase Storage (direct usage)
@@ -80,6 +88,7 @@ Components → Zustand Stores → Service Layer → API Layer → Database
 ```
 
 **Services:**
+
 - UserService
 - AuthService (vendor-agnostic)
 - PostService
@@ -122,6 +131,7 @@ config/labels.ts - Multi-language support
 **✅ Decision: Fastify (Recommended for Supabase)**
 
 **Why Fastify over Express?**
+
 - ✅ **2x faster** than Express (better for high-throughput)
 - ✅ **Built-in request validation** (schema-based)
 - ✅ **Better async handling** (handles concurrent requests efficiently)
@@ -131,6 +141,7 @@ config/labels.ts - Multi-language support
 - ✅ **Request batching** - Can batch multiple Supabase queries efficiently
 
 **Use Cases with Supabase:**
+
 - Managing multiple concurrent Supabase requests without overwhelming the database
 - Rate limiting at application level (beyond Supabase's built-in limits)
 - Request queuing for high-traffic scenarios
@@ -138,13 +149,14 @@ config/labels.ts - Multi-language support
 - Efficient handling of batch operations
 
 **Example: Request Management with Fastify**
+
 ```typescript
 // server/plugins/rateLimit.ts
 import rateLimit from '@fastify/rate-limit';
 
 fastify.register(rateLimit, {
   max: 100, // 100 requests per minute
-  timeWindow: '1 minute'
+  timeWindow: '1 minute',
 });
 
 // Request queuing for Supabase
@@ -181,6 +193,7 @@ const supabase = createClient(url, key, {
 - **Backend:** Vercel Serverless Functions (Fastify) - ✅ Supported, auto-scaling, free tier
 
 **Why Vercel Serverless for Fastify?**
+
 - ✅ Fastify works great as serverless functions
 - ✅ Auto-scaling (no server management)
 - ✅ Free tier: 100GB bandwidth
@@ -200,6 +213,7 @@ const supabase = createClient(url, key, {
 ### ✅ Decision: NativeWind (Tailwind CSS for React Native)
 
 **Why NativeWind?**
+
 - ✅ Works in both PWA (web) and native apps (iOS/Android)
 - ✅ Same Tailwind CSS classes everywhere
 - ✅ Single codebase for styling
@@ -207,28 +221,34 @@ const supabase = createClient(url, key, {
 - ✅ Great performance
 
 **Alternative Approach:**
+
 - React Native Paper (native apps) + Tailwind CSS (PWA web)
 - More native look on mobile, but requires separate styling
 
 ### Shared Libraries (Work in PWA + Expo)
 
 **UI & Styling:**
+
 - **NativeWind** - Tailwind CSS for React Native (works everywhere)
 - **Expo Icons** - Icon library (works in both PWA and native)
 
 **Forms & Validation:**
+
 - **React Hook Form** - Form management (works everywhere)
 - **Zod** - Schema validation (works everywhere)
 
 **Data & HTTP:**
+
 - **Axios** or **fetch** - HTTP client (works everywhere)
 - **Zustand** - State management (works everywhere)
 
 **Utilities:**
+
 - **date-fns** - Date manipulation (works everywhere)
 - **Zod** - Type-safe validation (works everywhere)
 
 **Example: Shared Component**
+
 ```typescript
 // Works in both PWA and native apps
 import { View, Text } from 'react-native';
@@ -251,12 +271,14 @@ export function Button() {
 **✅ Decision: Redis Optional for MVP**
 
 **MVP (No Redis):**
+
 - ✅ Vercel Edge Caching - For static/semi-static data
 - ✅ In-memory caching - For leaderboards (resets on cold starts, fine for MVP)
 - ✅ Supabase query caching - Built-in query result caching
 - ✅ Client-side caching - Zustand stores with TTL
 
 **When to Add Redis:**
+
 - High traffic (need shared cache across serverless instances)
 - Real-time leaderboards (need persistent cache)
 - Rate limiting across instances
@@ -363,22 +385,29 @@ export class AuthService {
     const { error } = await supabase.auth.signOut();
     return { error };
   }
-  
+
   // Get Current User
   static async getCurrentUser() {
-    const { data: { user }, error } = await supabase.auth.getUser();
+    const {
+      data: { user },
+      error,
+    } = await supabase.auth.getUser();
     return { user, error };
   }
 
   // Get Session
   static async getSession() {
-    const { data: { session }, error } = await supabase.auth.getSession();
+    const {
+      data: { session },
+      error,
+    } = await supabase.auth.getSession();
     return { session, error };
   }
 }
 ```
 
 **Setup in Supabase Dashboard:**
+
 1. Go to Authentication → Providers
 2. Enable Email provider (default)
 3. Enable Google OAuth (add Client ID & Secret)
@@ -411,6 +440,7 @@ export class AuthService {
 ```
 
 **Supported Providers:**
+
 - ✅ Email/Password
 - ✅ Google
 - ✅ GitHub

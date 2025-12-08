@@ -1,6 +1,7 @@
 # Setup Guide - Step by Step
 
 ## Prerequisites
+
 - Node.js 18+ installed
 - Git installed
 - Supabase account (free)
@@ -12,12 +13,14 @@
 ## Phase 1: Infrastructure Setup (Day 1)
 
 ### 1.1 Supabase Setup
+
 1. Go to [supabase.com](https://supabase.com) → Create project
 2. Get `SUPABASE_URL` and `SUPABASE_ANON_KEY` from Settings → API
 3. Enable Auth providers: Email (default), Google (add Client ID/Secret)
 4. Create storage bucket: `burger-photos` (public)
 
 ### 1.2 GitHub Setup
+
 1. Repository already created: `https://github.com/bhuve1996/burger-fest.git`
 2. Clone locally (if not done): `git clone https://github.com/bhuve1996/burger-fest.git`
 
@@ -26,6 +29,7 @@
 ## Phase 2: Monorepo Setup (Day 1)
 
 ### 2.1 Initialize Monorepo
+
 ```bash
 # Install pnpm (better for monorepos)
 npm install -g pnpm
@@ -37,15 +41,12 @@ mkdir -p apps/mobile apps/admin packages/api packages/types packages/services pa
 ```
 
 ### 2.2 Setup Root Package.json
+
 ```json
 {
   "name": "burger-fest",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*",
-    "server"
-  ],
+  "workspaces": ["apps/*", "packages/*", "server"],
   "scripts": {
     "dev": "turbo run dev",
     "build": "turbo run build"
@@ -62,6 +63,7 @@ mkdir -p apps/mobile apps/admin packages/api packages/types packages/services pa
 ## Phase 3: Backend Setup (Day 1-2)
 
 ### 3.1 Initialize Fastify Server
+
 ```bash
 cd server
 pnpm init
@@ -71,6 +73,7 @@ pnpm add @supabase/supabase-js prisma @prisma/client
 ```
 
 ### 3.2 Setup Prisma
+
 ```bash
 pnpm prisma init
 # Update prisma/schema.prisma with Supabase connection
@@ -78,6 +81,7 @@ pnpm prisma init
 ```
 
 ### 3.3 Create Basic Server
+
 ```typescript
 // server/src/index.ts
 import Fastify from 'fastify';
@@ -102,6 +106,7 @@ fastify.listen({ port: 3000 }, (err) => {
 ## Phase 4: Frontend - Admin Panel (Day 2-3)
 
 ### 4.1 Initialize Next.js Admin
+
 ```bash
 cd apps/admin
 npx create-next-app@latest . --typescript --tailwind --app --no-src-dir
@@ -111,6 +116,7 @@ pnpm add -D @types/node
 ```
 
 ### 4.2 Setup Environment Variables
+
 ```bash
 # apps/admin/.env.local
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
@@ -119,6 +125,7 @@ NEXT_PUBLIC_API_URL=http://localhost:3000
 ```
 
 ### 4.3 Create Basic Admin Layout
+
 ```typescript
 // apps/admin/app/layout.tsx
 export default function AdminLayout({ children }) {
@@ -131,6 +138,7 @@ export default function AdminLayout({ children }) {
 ## Phase 5: Frontend - Mobile App (Day 3-4)
 
 ### 5.1 Initialize Expo App
+
 ```bash
 cd apps/mobile
 npx create-expo-app@latest . --template blank-typescript
@@ -141,12 +149,14 @@ pnpm add expo-notifications
 ```
 
 ### 5.2 Setup Expo Router
+
 ```bash
 # Create app directory structure
 mkdir -p app/(auth) app/(tabs)
 ```
 
 ### 5.3 Setup NativeWind
+
 ```bash
 # Follow NativeWind setup guide
 # Update tailwind.config.js
@@ -154,6 +164,7 @@ mkdir -p app/(auth) app/(tabs)
 ```
 
 ### 5.4 Setup Environment Variables
+
 ```bash
 # apps/mobile/.env
 EXPO_PUBLIC_SUPABASE_URL=your_supabase_url
@@ -166,6 +177,7 @@ EXPO_PUBLIC_API_URL=http://localhost:3000
 ## Phase 6: Shared Packages (Day 4)
 
 ### 6.1 Create Shared Types Package
+
 ```bash
 cd packages/types
 pnpm init
@@ -173,6 +185,7 @@ pnpm init
 ```
 
 ### 6.2 Create Shared API Client
+
 ```bash
 cd packages/api
 pnpm init
@@ -181,6 +194,7 @@ pnpm add @supabase/supabase-js
 ```
 
 ### 6.3 Create Shared Services
+
 ```bash
 cd packages/services
 pnpm init
@@ -192,6 +206,7 @@ pnpm init
 ## Phase 7: Development (Day 5+)
 
 ### 7.1 Run Everything Locally
+
 ```bash
 # Terminal 1: Backend
 cd server
@@ -207,6 +222,7 @@ pnpm start
 ```
 
 ### 7.2 Test Locally
+
 - Admin: http://localhost:3001
 - Mobile: Expo Go app (scan QR code)
 - Backend: http://localhost:3000/health
@@ -216,6 +232,7 @@ pnpm start
 ## Phase 8: Deployment (Day 6+)
 
 ### 8.1 Deploy Backend to Vercel
+
 ```bash
 cd server
 # Create vercel.json
@@ -223,6 +240,7 @@ vercel deploy
 ```
 
 ### 8.2 Deploy Admin to Vercel
+
 ```bash
 cd apps/admin
 vercel deploy
@@ -230,6 +248,7 @@ vercel deploy
 ```
 
 ### 8.3 Deploy Mobile PWA
+
 ```bash
 cd apps/mobile
 # Build for web
@@ -239,6 +258,7 @@ vercel deploy
 ```
 
 ### 8.4 Build Native Apps (Later)
+
 ```bash
 cd apps/mobile
 # Setup EAS
@@ -289,4 +309,3 @@ cd apps/mobile && pnpm start
 ---
 
 **Start with Phase 1 (Supabase setup) → Then Phase 2 (Monorepo) → Continue sequentially**
-
