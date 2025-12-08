@@ -16,7 +16,7 @@
     "build:admin": "npm run build --workspace=@burger-fest/admin",
     "build:server": "npm run build --workspace=@burger-fest/server",
     "build": "npm run build:server && npm run build:admin && npm run build:mobile",
-    "lint": "eslint . --ext .ts,.tsx",
+    "lint": "eslint . --ext .ts,.tsx --ignore-path .eslintignore",
     "format": "prettier --write .",
     "type-check": "npm run type-check --workspaces --if-present"
   },
