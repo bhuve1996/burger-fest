@@ -1,50 +1,14 @@
 const { config } = require('dotenv');
 const { resolve } = require('path');
+const baseConfig = require('./app.json');
 
 // Load .env from root folder
 config({ path: resolve(__dirname, '../../.env') });
 
 module.exports = {
+  ...baseConfig,
   expo: {
-    name: 'Burger Fest',
-    slug: 'burger-fest',
-    version: '1.0.0',
-    orientation: 'portrait',
-    icon: './assets/icon.png',
-    userInterfaceStyle: 'light',
-    splash: {
-      image: './assets/splash.png',
-      resizeMode: 'contain',
-      backgroundColor: '#ffffff',
-    },
-    assetBundlePatterns: ['**/*'],
-    ios: {
-      supportsTablet: true,
-      bundleIdentifier: 'com.burgerfest.app',
-    },
-    android: {
-      adaptiveIcon: {
-        foregroundImage: './assets/adaptive-icon.png',
-        backgroundColor: '#ffffff',
-      },
-      package: 'com.burgerfest.app',
-    },
-    web: {
-      favicon: './assets/favicon.png',
-    },
-    scheme: 'burger-fest',
-    plugins: [
-      'expo-router',
-      'react-native-reanimated/plugin',
-      [
-        'expo-build-properties',
-        {
-          ios: {
-            useFrameworks: 'static',
-          },
-        },
-      ],
-    ],
+    ...baseConfig.expo,
     extra: {
       // Expose EXPO_PUBLIC_* variables from root .env
       EXPO_PUBLIC_SUPABASE_URL:
