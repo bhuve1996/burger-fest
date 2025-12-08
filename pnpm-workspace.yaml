@@ -1,5 +1,5 @@
 packages:
   - 'packages/*'
-  - 'aaloo/app'
-  - 'aaloo/admin'
-  - 'aaloo/admin/serverless'
+  - 'app'
+  - 'admin'
+  - 'admin/serverless'

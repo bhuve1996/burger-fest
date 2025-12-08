@@ -2,7 +2,7 @@ const { config } = require('dotenv');
 const { resolve } = require('path');
 
 // Load .env from root folder
-config({ path: resolve(__dirname, '../../../.env') });
+config({ path: resolve(__dirname, '../../.env') });
 
 module.exports = {
   expo: {

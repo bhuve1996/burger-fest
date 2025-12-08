@@ -4,11 +4,10 @@
 
 ```
 aaloo/
-├── aaloo/
-│   ├── app/              # Expo mobile app (PWA + iOS + Android)
-│   └── admin/
-│       ├── app/          # Next.js admin panel
-│       └── serverless/   # Fastify backend (serverless functions)
+├── app/                 # Expo mobile app (PWA + iOS + Android)
+├── admin/
+│   ├── app/             # Next.js admin panel
+│   └── serverless/      # Fastify backend (serverless functions)
 ├── packages/
 │   ├── config/          # Shared configuration
 │   ├── api/             # Shared API client
