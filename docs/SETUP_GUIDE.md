@@ -267,18 +267,25 @@ All services use the API client and are fully typed.
 
 ### 7.1 Run Everything Locally
 
+Run from root directory (no need to cd into each folder):
+
 ```bash
 # Terminal 1: Backend
-cd server
-pnpm dev
+pnpm run dev:server
 
 # Terminal 2: Admin
-cd apps/admin
-pnpm dev
+pnpm run dev:admin
 
 # Terminal 3: Mobile
-cd apps/mobile
-pnpm start
+pnpm run dev:mobile
+```
+
+**Or use the root workspace commands:**
+```bash
+# From root directory
+pnpm run dev:server   # Starts Fastify backend on port 3000
+pnpm run dev:admin    # Starts Next.js admin on port 3001
+pnpm run dev:mobile   # Starts Expo dev server
 ```
 
 ### 7.2 Test Locally
@@ -332,18 +339,20 @@ eas build --platform android
 ## Quick Start Commands
 
 ```bash
-# 1. Setup monorepo
+# 1. Setup monorepo (from root)
 pnpm install
 
-# 2. Start backend
-cd server && pnpm dev
+# 2. Start backend (from root)
+pnpm run dev:server
 
-# 3. Start admin
-cd apps/admin && pnpm dev
+# 3. Start admin (from root)
+pnpm run dev:admin
 
-# 4. Start mobile
-cd apps/mobile && pnpm start
+# 4. Start mobile (from root)
+pnpm run dev:mobile
 ```
+
+**All commands run from root directory - no need to cd into folders!**
 
 ---
 
