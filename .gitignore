@@ -14,10 +14,9 @@ build/
 out/
 *.tsbuildinfo
 
-# Environment variables
+# Environment variables (keep only .env.example in git)
 .env
 .env.local
-.env*.local
 
 # Logs
 *.log

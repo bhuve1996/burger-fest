@@ -1,8 +1,8 @@
 import dotenv from 'dotenv';
+import { resolve } from 'path';
 
-// Load .env.local if it exists
-dotenv.config({ path: '.env.local' });
-dotenv.config(); // Also load .env
+// Load .env from root folder
+dotenv.config({ path: resolve(__dirname, '../../../.env') });
 
 export const appConfig = {
   name: 'Burger Fest',
