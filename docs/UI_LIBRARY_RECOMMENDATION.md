@@ -1,6 +1,7 @@
 # UI Library Recommendation for Burger Fest
 
 ## Current Setup ✅
+
 - **NativeWind v4** - Already installed and configured
 - **Tailwind CSS v3.4** - Working with NativeWind
 - **Admin Panel** - Uses Tailwind + shadcn/ui
@@ -10,6 +11,7 @@
 ### Option 1: NativeWind + Tamanu UI ⭐ BEST
 
 **Why:**
+
 - ✅ **Tailwind-friendly** - Works seamlessly with your existing NativeWind setup
 - ✅ **Expo-first** - Built specifically for Expo
 - ✅ **Cross-platform** - Mobile + Web (perfect for PWA)
@@ -19,16 +21,22 @@
 - ✅ **Consistent** - Matches your admin panel's Tailwind approach
 
 **Installation:**
+
 ```bash
 cd apps/mobile
 pnpm add @tamagui/core @tamagui/config
 ```
 
 **Usage:**
+
 ```tsx
 // Works alongside NativeWind
-<View className="flex-1">  {/* NativeWind */}
-  <Button variant="primary">  {/* Tamanu UI */}
+<View className="flex-1">
+  {' '}
+  {/* NativeWind */}
+  <Button variant="primary">
+    {' '}
+    {/* Tamanu UI */}
     Click me
   </Button>
 </View>
@@ -39,25 +47,30 @@ pnpm add @tamagui/core @tamagui/config
 ### Option 2: NativeWind Only + Custom Components (shadcn-style)
 
 **Why:**
+
 - ✅ **Full control** - Build exactly what you need
 - ✅ **No dependencies** - Lighter bundle
 - ✅ **Consistent** - Same approach as admin panel (shadcn/ui)
 - ✅ **Already set up** - Just start building
 
 **Approach:**
+
 - Create reusable components in `apps/mobile/components/`
 - Use NativeWind for all styling
 - Share component patterns with admin panel
 
 **Example:**
+
 ```tsx
 // components/Button.tsx
 export function Button({ children, variant = 'default' }) {
   return (
-    <Pressable className={`
+    <Pressable
+      className={`
       px-4 py-2 rounded-lg
       ${variant === 'primary' ? 'bg-blue-500' : 'bg-gray-200'}
-    `}>
+    `}
+    >
       <Text className="text-white font-semibold">{children}</Text>
     </Pressable>
   );
@@ -69,18 +82,21 @@ export function Button({ children, variant = 'default' }) {
 ## ❌ NOT Recommended
 
 ### React Native Paper
+
 - ❌ Material Design (doesn't match your Tailwind aesthetic)
 - ❌ Doesn't work well with Tailwind
 - ❌ Different design system
 - ❌ Heavier bundle
 
 ### React Native Elements
+
 - ❌ Older library (less maintained)
 - ❌ Doesn't work well with Tailwind
 - ❌ Different styling approach
 - ❌ Not Expo-optimized
 
 ### Styled Components
+
 - ❌ **CSS-in-JS** (conflicts with Tailwind utility classes)
 - ❌ Different paradigm from your current setup
 - ❌ Can't share styles with admin panel
@@ -94,6 +110,7 @@ export function Button({ children, variant = 'default' }) {
 **Go with Option 1: NativeWind + Tamanu UI**
 
 **Reasons:**
+
 1. You already have NativeWind set up ✅
 2. Tamanu UI complements it perfectly (Tailwind-friendly)
 3. Modern, Expo-first, cross-platform
@@ -110,6 +127,7 @@ export function Button({ children, variant = 'default' }) {
 ## Next Steps
 
 1. **Try Tamanu UI first:**
+
    ```bash
    cd apps/mobile
    pnpm add @tamagui/core @tamagui/config
@@ -121,4 +139,3 @@ export function Button({ children, variant = 'default' }) {
    - Share patterns with admin panel
 
 3. **Either way, keep NativeWind** - It's your foundation!
-

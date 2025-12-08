@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "prepare": "husky",
-    "dev:mobile": "cd apps/mobile && expo start --clear",
+    "dev:mobile": "npm run dev --workspace=@burger-fest/mobile",
     "dev:admin": "npm run dev --workspace=@burger-fest/admin",
     "dev:server": "npm run dev --workspace=@burger-fest/server",
     "build:mobile": "npm run build --workspace=@burger-fest/mobile",
