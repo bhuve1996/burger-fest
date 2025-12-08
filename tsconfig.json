@@ -7,8 +7,10 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
   },
-  "exclude": ["node_modules", "dist", "build", ".next"]
+  "include": [],
+  "exclude": ["node_modules", "dist", "build", ".next", "apps", "server", "packages"]
 }
-
