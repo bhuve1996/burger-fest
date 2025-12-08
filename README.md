@@ -16,6 +16,7 @@ aaloo/
 │   └── services/        # Shared service layer
 └── package.json         # Root (manages all workspaces)
 ```
+
 <｜tool▁calls▁begin｜><｜tool▁call▁begin｜>
 read_file
 
