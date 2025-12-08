@@ -3,14 +3,7 @@ import { Tabs } from 'expo-router';
 export default function TabsLayout() {
   return (
     <Tabs>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Feed',
-          tabBarLabel: 'Feed',
-          headerShown: false,
-        }}
-      />
+      <Tabs.Screen name="index" />
     </Tabs>
   );
 }
