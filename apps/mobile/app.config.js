@@ -35,6 +35,7 @@ module.exports = {
     scheme: 'burger-fest',
     plugins: [
       'expo-router',
+      'react-native-reanimated/plugin',
       [
         'expo-build-properties',
         {
