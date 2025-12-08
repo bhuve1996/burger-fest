@@ -10,7 +10,5 @@
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true
-  },
-  "files": [],
-  "exclude": ["node_modules", "dist", "build", ".next"]
+  }
 }
