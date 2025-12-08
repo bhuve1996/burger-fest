@@ -1,3 +1,2 @@
-# Add linting and formatting checks here later
-# npm run lint
-# npm run format
+npm run format
+npm run lint

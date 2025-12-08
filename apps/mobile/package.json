@@ -1,0 +1,11 @@
+{
+  "name": "@burger-fest/mobile",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "dev": "expo start",
+    "build": "expo export"
+  }
+}
+
