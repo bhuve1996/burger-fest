@@ -281,6 +281,7 @@ pnpm run dev:mobile
 ```
 
 **Or use the root workspace commands:**
+
 ```bash
 # From root directory
 pnpm run dev:server   # Starts Fastify backend on port 3000
