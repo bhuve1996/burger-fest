@@ -48,15 +48,18 @@ mkdir -p apps/mobile apps/admin packages/api packages/types packages/services pa
   "private": true,
   "workspaces": ["apps/*", "packages/*", "server"],
   "scripts": {
-    "dev": "turbo run dev",
-    "build": "turbo run build"
+    "dev:mobile": "npm run dev --workspace=@burger-fest/mobile",
+    "dev:admin": "npm run dev --workspace=@burger-fest/admin",
+    "dev:server": "npm run dev --workspace=@burger-fest/server",
+    "build": "npm run build --workspaces --if-present"
   },
   "devDependencies": {
-    "turbo": "latest",
     "typescript": "^5.0.0"
   }
 }
 ```
+
+**Note:** Turbo is optional - we're proceeding without it for now. Can add later if needed for faster builds.
 
 ---
 
