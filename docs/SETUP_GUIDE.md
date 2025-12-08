@@ -135,7 +135,7 @@ pnpm add -D @types/node
 
 ### 4.2 Setup Environment Variables ✅ DONE
 
-Next.js reads environment variables from `apps/admin/.env.local`. Add these to your root `.env` file (they'll be used by other apps too):
+Next.js is configured to read from root `.env` file. Add these to your root `.env`:
 
 ```bash
 # Add to root .env file
@@ -144,7 +144,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=${SUPABASE_ANON_KEY}
 NEXT_PUBLIC_API_URL=${API_URL}
 ```
 
-**Note:** Next.js requires `NEXT_PUBLIC_` prefix for client-side variables. Copy these values to `apps/admin/.env.local` for Next.js to read them, or they'll be read from root `.env` if configured.
+**Note:** Next.js requires `NEXT_PUBLIC_` prefix for client-side variables. The `next.config.js` is configured to read from root `.env` and will fallback to non-prefixed versions (e.g., `SUPABASE_URL` → `NEXT_PUBLIC_SUPABASE_URL`).
 
 ### 4.3 Create Basic Admin Layout ✅ DONE
 
